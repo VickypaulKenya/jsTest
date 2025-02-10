@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="display">
+
+    </div>
+    <script>
+        const display=document.querySelector(".display");
+        const random={
+              
+              videos:[
+                {id:1,name:"Javascript",break:'broken'},
+                {id:2,name:"Javascript",break:'Alomst broken'},
+                {id:3,name:"Javascript", break:'not broken'},
+                ],
+     
+            info(){
+             this.videos.forEach(function(tag,index){
+                const ul=document.createElement("ul");
+                   ul.innerHTML=`
+                   <li key=${index}>
+                    <span>${tag.id}</span>
+                   <h5>${tag.name}</h5>
+                   <p>${tag.break}</p>
+                   </li>
+                   `
+                   display.appendChild(ul);
+                })
+            }
+        }
+        random.info();
+    </script>
+</body>
+</html>
